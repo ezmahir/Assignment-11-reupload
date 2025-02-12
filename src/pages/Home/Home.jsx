@@ -16,6 +16,15 @@ const Home = () => {
       .then((res) => res.json())
       .then((data) => setArtifacts(data));
   }, []);
+  const [artifacts2, setArtifacts2] = useState([]);
+
+  useEffect(() => {
+    fetch(
+      "https://historical-artifacts-tracker-server-teal.vercel.app/artifactLimited2"
+    )
+      .then((res) => res.json())
+      .then((data) => setArtifacts2(data));
+  }, []);
   return (
     <div className="space-y-10">
       <Helmet>
@@ -75,6 +84,14 @@ const Home = () => {
         </div>
         <div className="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 space-y-5 gap-10 w-11/12 mx-auto my-16">
           {artifacts.map((artifact) => (
+            <ArtifactCard key={artifact._id} artifact={artifact}></ArtifactCard>
+          ))}
+        </div>
+        <div className="text-center">
+          <p className="text-5xl font-bold">Latest Artifacts</p>
+        </div>
+        <div className="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 space-y-5 gap-10 w-11/12 mx-auto my-16">
+          {artifacts2.map((artifact) => (
             <ArtifactCard key={artifact._id} artifact={artifact}></ArtifactCard>
           ))}
         </div>
