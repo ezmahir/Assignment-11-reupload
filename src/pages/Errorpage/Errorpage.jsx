@@ -8,7 +8,7 @@ const Errorpage = () => {
       <div className="text-center my-16 space-y-10">
         <Link to="/">
           <button className="btn btn-error w-1/4 mx-auto rounded-3xl">
-            Go back to home <RiDoorOpenLine />
+            Go back to home <RiDoorOpenLine className="text-2xl ml-2" />
           </button>
         </Link>
         <h1 className="font-black text-7xl">OOPS...</h1>
