@@ -38,7 +38,7 @@ const NavBar = () => {
     </>
   );
   return (
-    <div className="navbar w-full mx-auto bg-slate-200 rounded-xl py-3 px-8 my-8 sticky top-0 z-10 opacity-80">
+    <div className="navbar w-full mx-auto bg-slate-200 rounded-xl py-3 sm:px-0 md:px-8 my-8 sticky top-0 z-10 opacity-80">
       <div className="navbar-start">
         <div className="dropdown">
           <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -67,7 +67,7 @@ const NavBar = () => {
         <Link to="/">
           <button className="btn btn-ghost text-2xl">
             <div className="flex gap-1">
-              <i>Historical Art Tracker</i>
+              <i>Historical Art</i>
               <img
                 className="w-10 h-10"
                 src="https://img.icons8.com/?size=100&id=kB9PpVGeb9U4&format=png&color=000000"
@@ -81,27 +81,14 @@ const NavBar = () => {
         <ul className="menu menu-horizontal px-1">{links}</ul>
       </div>
       <div className="navbar-end gap-x-4">
-        {/* {user ? (
-          <>
-            <button onClick={handleSignOut} className="btn">
-              Log Out
-            </button>
-          </>
-        ) : (
-          <>
-            <Link to="/login">
-              <button className="btn">Login</button>
-            </Link>
-            <Link to="/register">
-              <button className="btn">Register</button>
-            </Link>
-          </>
-        )} */}
         {user ? (
           <>
-            <h1 className="mr-2 text-2xl">
-              <i>Hello, {user.displayName}</i>
-            </h1>
+            <div className="sm:hidden md:block">
+              <h1 className="mr-2 text-2xl">
+                <i>Hello, {user.displayName}</i>
+              </h1>
+            </div>
+
             <div className="dropdown dropdown-hover">
               <img
                 className="w-10 h-10 rounded-full mr-5"
